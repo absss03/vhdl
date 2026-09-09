@@ -18,18 +18,18 @@ end mux_2_4;
 architecture gate of mux_2_4 is
 	begin
     p_mux: process (sel_0, sel_1, a_i, b_i, c_i, d_i)
-        variable v_sel : std_logic_vector(1 downto 0);
-      begin
-        v_sel := sel_1 & sel_0;
-        case v_sel is
-            when "00" =>
-                y_o <= a_i;
-            when "01" =>
-                y_o <= b_i;
-            when "10" =>          
-                y_o <= c_i;
-            whan others =>
-                y_o <= d_i;
-        end case;
-      end process p_mux;
+    variable v_sel : std_logic_vector(1 downto 0);
+    begin
+      v_sel := sel_1 & sel_0;
+      case v_sel is
+        when "00" =>
+          y_o <= a_i;
+        when "01" =>
+          y_o <= b_i;
+        when "10" =>          
+          y_o <= c_i;
+        whan others =>
+          y_o <= d_i;
+      end case;
+    end process p_mux;
 end gate;
