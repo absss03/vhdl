@@ -4,12 +4,12 @@ use ieee.numeric_std.all;
 
 entity reg_async_rst is
   generic (
-    N : integer := 8;
+    N : integer := 8
   );
   port (
     clk, rst, ena : in std_logic;
     d_i  : in std_logic_vector(N-1 downto 0);
-    q_o, nq_o     :  in std_logic_vector(N-1 downto 0)
+    q_o, nq_o     :  out std_logic_vector(N-1 downto 0)
   );
 end reg_async_rst;
 
@@ -19,10 +19,10 @@ begin
   async_p : process(clk, rst)
   begin
     if rst = '1' then
-      q_o <= (others => '0');
+      q_reg <= (others => '0');
     elsif rising_edge(clk) then
       if ena = '1' then
-        q_o <= d_i;
+        q_reg <= d_i;
       end if;
     end if;
   end process async_p;

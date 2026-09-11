@@ -4,12 +4,12 @@ use ieee.numeric_std.all;
 
 entity reg_async_set is
   generic (
-    N : integer := 8;
+    N : integer := 8
   );
   port (
     clk, set, ena : in std_logic;
     d_i  : in std_logic_vector(N-1 downto 0);
-    q_o, nq_o     :  in std_logic_vector(N-1 downto 0)
+    q_o, nq_o     :  out std_logic_vector(N-1 downto 0)
   );
 end reg_async_set;
 
