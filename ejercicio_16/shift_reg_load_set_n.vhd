@@ -16,7 +16,7 @@ end shift_reg_load_set;
 architecture rtl of shift_reg_load_set is
   signal shift : std_logic_vector(N-1 downto 0);
 begin
-  label : process(clk, rst)
+  sync_p : process(clk, rst)
   begin
     if rst = '0' then
       shift <= (others => '0');
@@ -29,6 +29,6 @@ begin
         end if;
       end if;
     end if;
-  end process;
+  end process sync_p;
   y_o <= shift;
 end architecture rtl;
