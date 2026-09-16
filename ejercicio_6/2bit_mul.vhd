@@ -37,5 +37,4 @@ begin
       s_o   =>   y_o(2), 
       c_o   =>   y_o(3)
     );
-
 end architecture rtl;
