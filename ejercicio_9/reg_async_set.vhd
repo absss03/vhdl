@@ -22,7 +22,7 @@ begin
       q_reg <= (others => '1');
     elsif rising_edge(clk) then
       if ena = '1' then
-        q_o <= d_i;
+        q_reg <= d_i;
       end if;
     end if;
   end process async_p;
