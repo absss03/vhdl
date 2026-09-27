@@ -16,7 +16,7 @@ entity n_adder is
 end n_adder;
 
 architecture rtl of n_adder is
-  signal sig_c : std_logic_vector(N-1 downto 0);
+  signal sig_c : std_logic_vector(N downto 0);
 begin
 
   sig_c(0) <= '0';
