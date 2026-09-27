@@ -14,7 +14,7 @@ entity reg_async_rst is
 end reg_async_rst;
 
 architecture rtl of reg_async_rst is
-  signal q_reg : std_logic;
+  signal q_reg : std_logic_vector(N-1 downto 0);
 begin
   async_p : process(clk, rst)
   begin

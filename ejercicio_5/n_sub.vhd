@@ -17,6 +17,7 @@ end n_sub;
 
 architecture rtl of n_sub is
   signal sig_c : std_logic_vector(N-1 downto 0);
+  signal b_n : std_logic_vector(N-1 downto 0);
 begin
 
   b_n <= not b_i;
@@ -27,7 +28,7 @@ begin
     port map (
       a_i   =>   a_i(i), 
       b_i   =>   b_n(i), 
-      c_i   =>   sig_c(i);
+      c_i   =>   sig_c(i),
       s_o   =>   s_o(i), 
       c_o   =>   sig_c(i+1)
     );

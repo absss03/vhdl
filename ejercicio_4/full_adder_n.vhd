@@ -18,5 +18,5 @@ architecture rtl of adder_n is
 begin
   full_sum <= ('0' & unsigned(a_i)) + ('0' & unsigned(b_i));
   y_o <= std_logic_vector(full_sum(N downto 0));
-  carry_o <= full_sum(N)
+  carry_o <= full_sum(N);
 end architecture rtl;

@@ -14,7 +14,7 @@ entity reg_sync_rst is
 end reg_sync_rst;
 
 architecture rtl of reg_sync_rst is
-  signal q_reg : std_logic;
+  signal q_reg : std_logic_vector(N-1 downto 0);
 begin
   sync_p : process(clk)
   begin

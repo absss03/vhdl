@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity reg_async_rst is
+entity reg_sync_set is
   generic (
     N : integer := 8
   );
@@ -11,10 +11,10 @@ entity reg_async_rst is
     d_i  : in std_logic_vector(N-1 downto 0);
     q_o, nq_o     :  out std_logic_vector(N-1 downto 0)
   );
-end reg_async_rst;
+end reg_sync_set;
 
-architecture rtl of reg_async_rst is
-  signal q_reg : std_logic;
+architecture rtl of reg_sync_set is
+  signal q_reg : std_logic_vector(N-1 downto 0);
 begin
   sync_p : process(clk)
   begin

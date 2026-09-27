@@ -26,7 +26,7 @@ begin
     port map (
       a_i   =>   a_i(i), 
       b_i   =>   b_i(i), 
-      c_i   =>   sig_c(i);
+      c_i   =>   sig_c(i),
       s_o   =>   s_o(i), 
       c_o   =>   sig_c(i+1)
     );

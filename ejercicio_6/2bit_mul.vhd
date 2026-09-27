@@ -20,7 +20,7 @@ begin
   p10 <= a_i(0) and b_i(1);
   p11 <= a_i(1) and b_i(1);
 
-  adder : entity work.bit_adder
+  adder_1 : entity work.bit_adder
     port map (
       a_i   =>   p01, 
       b_i   =>   p10, 
@@ -29,7 +29,7 @@ begin
       c_o   =>   carry
     );
 
-    adder : entity work.bit_adder
+  adder_2 : entity work.bit_adder
     port map (
       a_i   =>   p11, 
       b_i   =>   carry, 
