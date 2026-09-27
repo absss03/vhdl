@@ -18,5 +18,5 @@ begin
   sig_3 <= a_i and b_i;
 
   s_o   <= c_i xor sig_1;
-  c_o   <= sig_1 or sig_3;
+  c_o   <= sig_3 or sig_2;
 end architecture rtl;
