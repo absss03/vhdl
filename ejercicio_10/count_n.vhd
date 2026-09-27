@@ -13,15 +13,15 @@ entity counter is
 end counter;
 
 architecture rtl of counter is
-  signal cte : std_logic_vector(N-1 downto 0);
+  signal cte : unsigned(N-1 downto 0);
 begin
   sync_p : process(clk, rst)
   begin
     if rst = '1' then
       cte <= (others => '0');
     elsif rising_edge(clk) then
-      cte <= cte + '1';
+      cte <= cte + 1;
     end if;
   end process sync_p;
-  y_o <= cte;
+  y_o <= std_logic_vector(cte);
 end architecture rtl;

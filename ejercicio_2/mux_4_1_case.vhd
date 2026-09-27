@@ -28,7 +28,7 @@ architecture gate of mux_2_4 is
           y_o <= b_i;
         when "10" =>          
           y_o <= c_i;
-        whan others =>
+        when others =>
           y_o <= d_i;
       end case;
     end process p_mux;

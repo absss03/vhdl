@@ -2,7 +2,7 @@ library ieee ;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity mux_4_1 is
+entity mux4to1_n is
   generic (
     N : integer := 8
   );
@@ -11,9 +11,9 @@ entity mux_4_1 is
     sel_0, sel_1       : in  std_logic;
     y_o                  : out std_logic_vector(N-1 downto 0)
   );
-end mux_4_1 ; 
+end mux4to1_n ; 
 
-architecture rtl of mux_4_1 is
+architecture rtl of mux4to1_n is
 begin
   p_mux: process (sel_0, sel_1, a_i, b_i, c_i, d_i)
   variable v_sel : std_logic_vector(1 downto 0);

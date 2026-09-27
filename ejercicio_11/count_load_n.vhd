@@ -14,7 +14,7 @@ entity counter_load is
 end counter_load;
 
 architecture rtl of counter_load is
-  signal cte : std_logic_vector(N-1 downto 0);
+  signal cte : unsigned(N-1 downto 0);
 begin
   sync_p : process(clk, rst)
   begin
@@ -22,11 +22,11 @@ begin
       cte <= (others => '0');
     elsif rising_edge(clk) then
       if load = '1' then 
-        cte <= d_i;
+        cte <= unsigned(d_i);
       else
-        cte <= cte + '1';
+        cte <= cte + 1;
       end if;
     end if;
   end process sync_p;
-  y_o <= cte;
+  y_o <= std_logic_vector(cte);
 end architecture rtl;

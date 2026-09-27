@@ -27,10 +27,10 @@ architecture rtl of mux_16_1_n is
     mux_0: entity work.mux4to1_n
       generic map ( N => N )
       port map (
-        d0_i => d0_i, 
-        d1_i => d1_i, 
-        d2_i => d2_i, 
-        d3_i => d3_i,
+        a_i => d0_i, 
+        b_i => d1_i, 
+        c_i => d2_i, 
+        d_i => d3_i,
         sel_0 => sel_0, 
         sel_1 => sel_1,
         y_o => mux0_out
@@ -39,10 +39,10 @@ architecture rtl of mux_16_1_n is
     mux_1: entity work.mux4to1_n
       generic map ( N => N )
       port map (
-        d0_i => d4_i, 
-        d1_i => d5_i, 
-        d2_i => d6_i, 
-        d3_i => d7_i,
+        a_i => d4_i, 
+        b_i => d5_i, 
+        c_i => d6_i, 
+        d_i => d7_i,
         sel_0 => sel_0,
         sel_1 => sel_1,
         y_o => mux1_out
@@ -51,10 +51,10 @@ architecture rtl of mux_16_1_n is
     mux_2: entity work.mux4to1_n
       generic map ( N => N )
       port map (
-        d0_i => d8_i, 
-        d1_i => d9_i, 
-        d2_i => d10_i, 
-        d3_i => d11_i,
+        a_i => d8_i, 
+        b_i => d9_i, 
+        c_i => d10_i, 
+        d_i => d11_i,
         sel_0 => sel_0,
         sel_1 => sel_1,
         y_o => mux2_out
@@ -63,10 +63,10 @@ architecture rtl of mux_16_1_n is
     mux_3: entity work.mux4to1_n
       generic map ( N => N )
       port map (
-        d0_i => d12_i, 
-        d1_i => d13_i, 
-        d2_i => d14_i, 
-        d3_i => d15_i,
+        a_i => d12_i, 
+        b_i => d13_i, 
+        c_i => d14_i, 
+        d_i => d15_i,
         sel_0 => sel_0,
         sel_1 => sel_1,
         y_o => mux3_out
@@ -75,10 +75,10 @@ architecture rtl of mux_16_1_n is
     mux_4: entity work.mux4to1_n
       generic map ( N => N )
       port map (
-        d0_i => mux0_out,
-        d1_i => mux1_out,
-        d2_i => mux2_out,
-        d3_i => mux3_out,
+        a_i => mux0_out,
+        b_i => mux1_out,
+        c_i => mux2_out,
+        d_i => mux3_out,
         sel_0 => sel_2,
         sel_1 => sel_3,
         y_o => y_o
