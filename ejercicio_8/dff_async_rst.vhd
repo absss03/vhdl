@@ -15,9 +15,9 @@ begin
   async_p : process(clk, rst)
   begin
     if rst = '1' then
-      q_o <= '0';
+      q_reg <= '0';
     elsif rising_edge(clk) then
-      q_o <= d_i;
+      q_reg <= d_i;
     end if;
   end process async_p;
 
