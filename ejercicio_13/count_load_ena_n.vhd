@@ -14,7 +14,7 @@ entity counter_load_ena is
 end counter_load_ena;
 
 architecture rtl of counter_load_ena is
-  signal cte : std_logic_vector(N-1 downto 0);
+  signal cte : unsigned(N-1 downto 0);
 begin
   sync_p : process(clk, rst)
   begin
@@ -23,12 +23,12 @@ begin
     elsif rising_edge(clk) then
       if ena = '1' then
         if load = '1' then 
-          cte <= d_i;
+          cte <= unsigned(d_i);
         else
           cte <= cte + '1';
         end if;
       end if;
     end if;
   end process sync_p;
-  y_o <= cte;
+  y_o <= std_logic_vector(cte);
 end architecture rtl;

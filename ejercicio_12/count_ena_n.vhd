@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity counter_load_ena is
+entity counter_ena is
   generic (
     N : integer := 8
   );
@@ -10,10 +10,10 @@ entity counter_load_ena is
     clk, rst, ena : in std_logic;
     y_o : out std_logic_vector(N-1 downto 0)
   );
-end counter_load_ena;
+end counter_ena;
 
-architecture rtl of counter_load_ena is
-  signal cte : std_logic_vector(N-1 downto 0);
+architecture rtl of counter_ena is
+  signal cte : unsigned(N-1 downto 0);
 begin
   sync_p : process(clk, rst)
   begin
@@ -21,9 +21,9 @@ begin
       cte <= (others => '0');
     elsif rising_edge(clk) then
       if ena = '1' then
-        cte <= cte + '1';
+        cte <= cte + 1;
       end if;
     end if;
   end process sync_p;
-  y_o <= cte;
+  y_o <= std_logic_vector(cte);
 end architecture rtl;
